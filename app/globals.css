@@ -1,26 +1,43 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+  
+  body {
+    @apply font-inter;
+  }
+  
+  button, .button {
+    @apply font-montserrat;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-primary font-montserrat py-2 px-4 rounded-md hover:opacity-90 transition duration-300 font-medium;
+  }
+  
+  .btn-secondary {
+    @apply bg-primary text-secondary font-montserrat py-2 px-4 rounded-md hover:opacity-90 transition duration-300 font-medium;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary font-montserrat py-2 px-4 rounded-md hover:bg-primary hover:text-secondary transition duration-300 font-medium;
+  }
+  
+  .input-field {
+    @apply border border-gray-300 rounded-md p-2 w-full focus:ring-2 focus:ring-accent focus:outline-none;
+  }
+  
+  .card {
+    @apply bg-white rounded-md shadow-md overflow-hidden;
+  }
 }
