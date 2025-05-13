@@ -1,18 +1,26 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1C1C1C;
+  --color-secondary: #F5F5F5;
+  --color-accent: #DAA520;
+
+  --font-playfair-display: 'Playfair Display', serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+}
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+    font-family: var(--font-playfair-display);
   }
-  
+
   body {
-    @apply font-inter;
+    font-family: var(--font-inter);
   }
-  
+
   button, .button {
-    @apply font-montserrat;
+    font-family: var(--font-montserrat);
   }
 }
 
@@ -20,23 +28,23 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .btn-primary {
-    @apply bg-accent text-primary font-montserrat py-2 px-4 rounded-md hover:opacity-90 transition duration-300 font-medium;
+    @apply bg-[--color-accent] text-[--color-primary] font-montserrat py-2 px-4 rounded-md hover:opacity-90 transition duration-300 font-medium;
   }
-  
+
   .btn-secondary {
-    @apply bg-primary text-secondary font-montserrat py-2 px-4 rounded-md hover:opacity-90 transition duration-300 font-medium;
+    @apply bg-[--color-primary] text-[--color-secondary] font-montserrat py-2 px-4 rounded-md hover:opacity-90 transition duration-300 font-medium;
   }
-  
+
   .btn-outline {
-    @apply border border-primary text-primary font-montserrat py-2 px-4 rounded-md hover:bg-primary hover:text-secondary transition duration-300 font-medium;
+    @apply border border-[--color-primary] text-[--color-primary] font-montserrat py-2 px-4 rounded-md hover:bg-[--color-primary] hover:text-[--color-secondary] transition duration-300 font-medium;
   }
-  
+
   .input-field {
-    @apply border border-gray-300 rounded-md p-2 w-full focus:ring-2 focus:ring-accent focus:outline-none;
+    @apply border border-gray-300 rounded-md p-2 w-full focus:ring-2 focus:ring-[--color-accent] focus:outline-none;
   }
-  
+
   .card {
     @apply bg-white rounded-md shadow-md overflow-hidden;
   }

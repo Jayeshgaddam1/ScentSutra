@@ -2,23 +2,12 @@ import { Inter, Playfair_Display, Montserrat } from 'next/font/google'
 import './globals.css'
 
 // Font setup
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+import { Inter, Playfair_Display, Montserrat } from 'next/font/google';
 
-const playfairDisplay = Playfair_Display({ 
-  subsets: ['latin'],
-  variable: '--font-playfair-display',
-  display: 'swap',
-})
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const playfairDisplay = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair-display' });
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
 
-const montserrat = Montserrat({ 
-  subsets: ['latin'],
-  variable: '--font-montserrat',
-  display: 'swap',
-})
 
 export const metadata = {
   title: 'ScentSutra | Premium Perfume Dupes',
